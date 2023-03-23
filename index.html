@@ -11,32 +11,34 @@
 </head>
 
 <body>
-  <div class="container">
-    <header>
-      <h1>To Do App</h1>
-      <form id="new-task-form">
-        <input type="text" id="new-task-input" placeholder="Enter New Task" />
-        <input type="submit" id="new-task-submit" value="Add Task" />
-      </form>
-    </header>
-<main>
-  <section class="task-list">
-    <h2>Tasks</h2>
-    <div id="tasks">
-      <div class="content">
-        <input type="text" 
-        class="text"
-        value="My New Task"
-        readonly/>
+  <header>
+    <h1>To Do App</h1>
+    <form id="new-task-form">
+      <input type="text" id="new-task-input" placeholder="Enter New Task" />
+      <input type="submit" id="new-task-submit" value="Add Task" />
+    </form>
+  </header>
+  <main>
+    <section class="task-list">
+      <h2>Tasks</h2>
+      <div id="tasks">
+
+        <!--
+        <div class="task">
+          <div class="content">
+            <input type="text" class="text" value="My New Task" readonly />
+          </div>
+          <div class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </div>
+        </div>
+      -->
+
       </div>
-      <div class="actions">
-        <button class="edit">Edit</button>
-        <button class="delete">Delete</button>
-      </div>
-    </div>
-  </section>
-</main>
-<script src="./js/script.js"></script>
+    </section>
+  </main>
+  <script src="./js/script.js"></script>
 </body>
 
 </html>
