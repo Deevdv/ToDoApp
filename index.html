@@ -6,39 +6,80 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/stylesheet.css">
-  <script src="./js/script.js" defer></script>
   <title>To Do App</title>
 </head>
 
 <body>
-  <header>
-    <h1>To Do App</h1>
-    <form id="new-task-form">
-      <input type="text" id="new-task-input" placeholder="Enter New Task" />
-      <input type="submit" id="new-task-submit" value="Add Task" />
-    </form>
-  </header>
-  <main>
-    <section class="task-list">
-      <h2>Tasks</h2>
-      <div id="tasks">
+  <main class="app">
 
-        <!--
-        <div class="task">
-          <div class="content">
-            <input type="text" class="text" value="My New Task" readonly />
+    <section class="greeting">
+      <h2 class="title"> Hello <input type="text" id="name" placeholder="Name here"> </h2>
+    </section>
+
+    <section class="create-todo">
+      <h3>Create Task</h3>
+      <form id="new-todo-form">
+        <h4>What task do you have to do?</h4>
+        <input type="text" name="content" placeholder="e.g. buy milk">
+
+        <h4>Category</h4>
+        <div class="options">
+
+          <label>
+            <input type="radio" name="category" id="category-business" value="business">
+            <span class="bubble-business"></span>
+            <div>Business</div>
+          </label>
+
+          <label>
+            <input type="radio" name="category" id="category-personal" value="personal">
+            <span class="bubble-personal"></span>
+            <div>Personal</div>
+          </label>
+        </div>
+        <input type="submit" value="Add Task">
+
+        <input type="date" name="date" id="date-input">
+      </form>
+    </section>
+
+    <section class="todo-list">
+      <h3>Task List</h3>
+      <div class="list" id="todo-list">
+
+        <div class="todo-item">
+          <label>
+            <input type="checkbox">
+            <span class="bubble-business"></span>
+          </label>
+
+          <div class="todo-content">
+            <input type="text" value="Attend meeting" readonly>
           </div>
           <div class="actions">
             <button class="edit">Edit</button>
             <button class="delete">Delete</button>
           </div>
         </div>
-      -->
+        <div class="todo-item">
+          <label>
+            <input type="checkbox">
+            <span class="bubble-personal"></span>
+          </label>
 
+          <div class="todo-content">
+            <input type="text" value="Buy milk" readonly>
+          </div>
+          <div class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </div>
+        </div>
       </div>
     </section>
+
   </main>
-  <script src="./js/script.js"></script>
+  <script src="./js/script.js" defer></script>
 </body>
 
 </html>
