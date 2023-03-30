@@ -18,16 +18,26 @@ window.addEventListener('load', () => {
             createdAt: new Date().getTime()
         }
 
-        todos.push(todo);
-        localStorage.setItem('todos', JSON.stringify(todos));
-        e.target.reset();
+            // add new todo to todos array
+        todos.push(todo)
+        // sort the todo items by created date
+        sorted_todos = todos.sort(function (a, b) {
+            return b.createdAt - a.createdAt
+        });
+    
+        // save the sorted_todos to localStorage       
+
+        localStorage.setItem('todos', JSON.stringify(sorted_todos));
+     
         DisplayTodos();
     })
 
     DisplayTodos();
 })
 
-function DisplayTodos () {
+
+
+function DisplayTodos() {
     const todoList = document.querySelector('#todo-list');
     todoList.innerHTML = '';
     todos.forEach(todo => {
@@ -42,13 +52,14 @@ function DisplayTodos () {
         const edit = document.createElement('button');
         const deleteButton = document.createElement('button');
 
+
         input.type = 'checkbox';
         input.checked = todo.done;
         span.classList.add('bubble');
 
         if (todo.category == 'personal') {
             span.classList.add('personal');
-        }   else {
+        } else {
             span.classList.add('business');
         }
 
@@ -88,6 +99,7 @@ function DisplayTodos () {
             DisplayTodos();
         })
 
+
         edit.addEventListener('click', e => {
             const input = content.querySelector('input');
             input.removeAttribute('readonly');
@@ -99,12 +111,11 @@ function DisplayTodos () {
                 DisplayTodos();
             })
         })
-         deleteButton.addEventListener('click', e => {
+        deleteButton.addEventListener('click', e => {
             todos = todos.filter(t => t != todo);
             localStorage.setItem('todos', JSON.stringify(todos));
             DisplayTodos();
-         })
+        })
 
-})
-    
+    })
 }

@@ -1,13 +1,13 @@
 :root {
-    --primary: rgb(239, 116, 218);
+    --primary: rgb(72, 71, 72);
     --business: rgb(57, 57, 190);
-    --personal: var(--primary);
-    --light: rgba(255, 255, 255, 0.823);
-    --gray: #6c6c6c;
-    --dark: rgb(44, 44, 46);
+    --personal: rgba(250, 119, 208, 0.912);
+    --light:
+        --gray: #6c6c6c;
+    --dark: rgb(43, 43, 46);
     --danger: crimson;
 
-    --shadow: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     --business-glow: 0px 0px 4px rgba(57, 57, 190);
     --personal-glow: 0px 0px 4px rgba(223, 116, 239);
 }
@@ -19,17 +19,52 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-input:not([type="radio"]):not([type="checkbox"]), button {
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: initial;
+html {
+    height: 100%;
 }
 
 body {
-    background: var(--light);
-    color: var(--dark);
+    margin: 0;
+}
+
+.bg {
+    animation: slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, rgb(91, 91, 91) 50%, rgb(193, 194, 195) 50%);
+    bottom: 0;
+    left: -50%;
+    opacity: .3;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.content {
+    background-color: white;
+    margin-top: 2rem;
+    opacity: .9;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 1%;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
 }
 
 section {
@@ -54,6 +89,15 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
 .greeting {
     display: flex;
 }
@@ -64,7 +108,8 @@ h4 {
     min-width: 0;
 }
 
-.greeting .title, .greeting .title input {
+.greeting .title,
+.greeting .title input {
     color: var(--dark);
     font-size: 1.5rem;
     font-weight: 700;
@@ -101,7 +146,8 @@ h4 {
     cursor: pointer;
 }
 
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
     display: none;
 }
 
@@ -139,7 +185,7 @@ input[type="radio"], input[type="checkbox"] {
     box-shadow: var(--personal-glow);
 }
 
-input:checked ~ .bubble::after{
+input:checked~.bubble::after {
     width: 10px;
     height: 10px;
     opacity: 1;
@@ -154,12 +200,12 @@ input:checked ~ .bubble::after{
 .create-todo input[type="submit"] {
     display: block;
     width: 100%;
-    font-size: 1,125rem;
+    font-size: 1, 125rem;
     padding: 1rem 1.5rem;
-    color: wheat;
+    color: rgb(255, 255, 255);
     background-color: var(--primary);
     border-radius: 0.5rem;
-    box-shadow: var(--personal-glow);
+    box-shadow: var(--shadow);
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
@@ -227,4 +273,8 @@ input:checked ~ .bubble::after{
 .todo-item.done .todo-content input {
     text-decoration: line-through;
     color: var(--gray);
+}
+
+button {
+    cursor: pointer;
 }

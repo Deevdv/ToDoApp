@@ -12,70 +12,46 @@
 <body>
   <main class="app">
 
-    <section class="greeting">
-      <h2 class="title"> Hello <input type="text" id="name" placeholder="Name here"> </h2>
-    </section>
 
-    <section class="create-todo">
-      <h3>Create Task</h3>
-      <form id="new-todo-form">
-        <h4>What task do you have to do?</h4>
-        <input type="text" name="content" placeholder="e.g. buy milk">
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
 
-        <h4>Category</h4>
-        <div class="options">
+      <section class="greeting">
+        <h2 class="title"> Hello <input type="text" id="name" placeholder="Name here"> </h2>
+      </section>
 
-          <label>
-            <input type="radio" name="category" id="category1" value="business">
-            <span class="bubble business"></span>
-            <div>Business</div>
-          </label>
+      <section class="create-todo">
+        <h3>Create Task</h3>
+        <form id="new-todo-form">
+          <h4>What task do you have to do?</h4>
+          <input type="text" name="content" placeholder="e.g. buy milk">
 
-          <label>
-            <input type="radio" name="category" id="category2" value="personal">
-            <span class="bubble personal"></span>
-            <div>Personal</div>
-          </label>
-        </div>
-        <input type="submit" value="Add Task">
-      </form>
-    </section>
+          <h4>Category</h4>
+          <div class="options">
 
-    <section class="todo-list">
-      <h3>Task List</h3>
-      <div class="list" id="todo-list">
-<!--
-        <div class="todo-item done">
-          <label>
-            <input type="checkbox">
-            <span class="bubble-business"></span>
-          </label>
+            <label>
+              <input type="radio" name="category" id="category1" value="business">
+              <span class="bubble business"></span>
+              <div>Business</div>
+            </label>
 
-          <div class="todo-content">
-            <input type="text" value="Attend meeting" readonly>
+            <label>
+              <input type="radio" name="category" id="category2" value="personal">
+              <span class="bubble personal"></span>
+              <div>Personal</div>
+            </label>
           </div>
-          <div class="actions">
-            <button class="edit">Edit</button>
-            <button class="delete">Delete</button>
-          </div>
-        </div>
-        <div class="todo-item">
-          <label>
-            <input type="checkbox">
-            <span class="bubble-personal"></span>
-          </label>
+          <input type="submit" value="Add Task">
+        </form>
+      </section>
 
-          <div class="todo-content">
-            <input type="text" value="Buy milk" readonly>
-          </div>
-          <div class="actions">
-            <button class="edit">Edit</button>
-            <button class="delete">Delete</button>
-          </div>
-        </div>
-      </div>-->
-    </section>
-
+      <section class="todo-list">
+        <h3>Task List</h3>
+        <div class="list" id="todo-list">
+      </section>
+    </div>
   </main>
   <script src="./js/script.js" defer></script>
 </body>
