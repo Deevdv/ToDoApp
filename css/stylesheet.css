@@ -1,3 +1,5 @@
+
+/*adding css root variables to use throughout*/
 :root {
     --primary: rgb(72, 71, 72);
     --business: rgb(57, 57, 190);
@@ -27,6 +29,7 @@ body {
     margin: 0;
 }
 
+/*animation styling*/
 .bg {
     animation: slide 3s ease-in-out infinite alternate;
     background-image: linear-gradient(-60deg, rgb(33, 33, 33) 50%, rgb(166, 167, 167) 50%);
@@ -45,7 +48,6 @@ body {
     opacity: .9;
     padding-top: 1rem;
     padding-bottom: 1rem;
-
     border: 10px solid black;
     border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23cffffe' /%3E%3Cstop offset='25%25' stop-color='%23f9f7d9' /%3E%3Cstop offset='50%25' stop-color='%23fce2ce' /%3E%3Cstop offset='100%25' stop-color='%23ffc1f3' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3'/%3E %3C/svg%3E") 1;
 }
@@ -69,6 +71,7 @@ body {
     }
 }
 
+/*sections and headings styling*/
 section {
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -91,6 +94,7 @@ h4 {
     margin-bottom: 0.5rem;
 }
 
+/*removing all styling from the buttons*/
 input:not([type="radio"]):not([type="checkbox"]),
 button {
     appearance: none;
@@ -100,6 +104,7 @@ button {
     cursor: initial;
 }
 
+/*greeting styling changed*/
 .greeting {
     display: flex;
 }
@@ -117,6 +122,7 @@ button {
     font-weight: 700;
 }
 
+/*create-todo input styling*/
 .create-todo input[type="text"] {
     display: block;
     width: 100%;
@@ -136,6 +142,7 @@ button {
     margin-bottom: 1.5rem;
 }
 
+/*business and personal category options styling*/
 .create-todo .options label {
     display: flex;
     flex-direction: column;
@@ -144,7 +151,7 @@ button {
     padding: 1.5rem;
     background-color: rgb(237, 217, 242);
     border-radius: 0.5rem;
-    box-shadow: var(--sha)dow;
+    box-shadow: var(--shadow);
     cursor: pointer;
 }
 
@@ -153,6 +160,7 @@ input[type="checkbox"] {
     display: none;
 }
 
+/*bubble personal and bubble business styling*/
 .bubble {
     display: flex;
     align-items: center;
@@ -170,6 +178,7 @@ input[type="checkbox"] {
     box-shadow: var(--personal-glow);
 }
 
+/*adding a slight wase in and out transition for general styling*/
 .bubble::after {
     content: "";
     display: block;
@@ -187,6 +196,7 @@ input[type="checkbox"] {
     box-shadow: var(--personal-glow);
 }
 
+/*bubble checking styling when clicked in category*/
 input:checked~.bubble::after {
     width: 10px;
     height: 10px;
@@ -199,6 +209,7 @@ input:checked~.bubble::after {
     margin-top: 1rem;
 }
 
+/*styling for add task button*/
 .create-todo input[type="submit"] {
     display: block;
     width: 100%;
@@ -212,6 +223,7 @@ input:checked~.bubble::after {
     transition: 0.2s ease-in-out;
 }
 
+/*hover effect for add task button*/
 .create-todo input[type="submit"]:hover {
     opacity: 0.75;
 }
@@ -220,6 +232,7 @@ input:checked~.bubble::after {
     margin: 1rem 0;
 }
 
+/*styling for task list*/
 .todo-list .todo-item {
     display: flex;
     align-items: center;
@@ -230,12 +243,14 @@ input:checked~.bubble::after {
     margin-bottom: 1rem;
 }
 
+/*styling for bubble checkbox next to task*/
 .todo-item label {
     display: block;
     margin-right: 1rem;
     cursor: pointer;
 }
 
+/*edit and delete button styling*/
 .todo-item .todo-content {
     flex: 1 1 0%;
 }
@@ -250,6 +265,7 @@ input:checked~.bubble::after {
     align-items: center;
 }
 
+/*futher styling for edit and delete buttons*/
 .todo-item .actions button {
     display: block;
     padding: 0.5rem;
@@ -259,10 +275,12 @@ input:checked~.bubble::after {
     transition: 0.3 ease-in-out;
 }
 
+/*hover on click, dlete and edit buttons*/
 .todo-item .actions button:hover {
     opacity: 0.75;
 }
 
+/*colour styling for edit and delete buttons*/
 .todo-item .actions .edit {
     margin-right: 0.5rem;
     background-color: var(--primary);
@@ -272,11 +290,8 @@ input:checked~.bubble::after {
     background-color: var(--danger);
 }
 
+/*line-through styling for completed task*/
 .todo-item.done .todo-content input {
     text-decoration: line-through;
     color: var(--gray);
-}
-
-button {
-    cursor: pointer;
 }
