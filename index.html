@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--Head with tags and links to css-->
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,21 +14,21 @@
 <body>
   <main class="app">
 
-
+    <!--Divs required for animated background-->
     <div class="bg"></div>
     <div class="bg bg2"></div>
     <div class="bg bg3"></div>
     <div class="content">
 
+      <!--sections for the name and task inputs-->
       <section class="greeting">
         <h2 class="title"> Hello, <input type="text" id="name" placeholder="Name here"> </h2>
       </section>
 
-      <div class="inline-svg">
-      </div>
-
       <section class="create-todo">
         <h3>Create Task</h3>
+
+        <!--form for javascript funtionality-->
         <form id="new-todo-form">
           <h4>What task do you have to do?</h4>
           <input type="text" name="content" placeholder="e.g. buy milk">
@@ -34,28 +36,34 @@
           <h4>Category</h4>
           <div class="options">
 
+            <!--bubbles for selecting a category-->
             <label>
-              <input type="radio" name="category" id="category1" value="business">
+              <input type="radio" name="category" id="category-one" value="business">
               <span class="bubble business"></span>
               <div>Business</div>
             </label>
 
             <label>
-              <input type="radio" name="category" id="category2" value="personal">
+              <input type="radio" name="category" id="category-two" value="personal">
               <span class="bubble personal"></span>
               <div>Personal</div>
             </label>
+
+            <!--submit input to add a task-->
           </div>
           <input type="submit" value="Add Task">
         </form>
       </section>
 
+      <!--todo list section-->
       <section class="todo-list">
         <h3>Task List</h3>
         <div class="list" id="todo-list">
       </section>
     </div>
   </main>
+
+  <!--script tag for the Javascript file-->
   <script src="./js/script.js" defer></script>
 </body>
 
