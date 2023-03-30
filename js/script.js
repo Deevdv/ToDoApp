@@ -1,40 +1,43 @@
+
 window.addEventListener('load', () => {
+    //creating global varaible and declaring variables
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     const nameInput = document.querySelector('#name');
     const newTodoForm = document.querySelector('#new-todo-form');
     const username = localStorage.getItem('username') || '';
     nameInput.value = username;
+    //localStorage used to update current entry 
     nameInput.addEventListener('change', e => {
         localStorage.setItem('username', e.target.value);
     })
 
     newTodoForm.addEventListener('submit', e => {
         e.preventDefault();
-
+        //
         const todo = {
             content: e.target.elements.content.value,
             category: e.target.elements.category.value,
             done: false,
             createdAt: new Date().getTime()
         }
-
-            // add new todo to todos array
+        // add new todo to todos array
         todos.push(todo)
         // sort the todo items by created date
         sorted_todos = todos.sort(function (a, b) {
             return b.createdAt - a.createdAt
+        
         });
-    
+
         // save the sorted_todos to localStorage       
 
         localStorage.setItem('todos', JSON.stringify(sorted_todos));
-     
+        e.target.reset();
+
         DisplayTodos();
     })
 
     DisplayTodos();
 })
-
 
 
 function DisplayTodos() {
