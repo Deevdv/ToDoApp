@@ -24,7 +24,6 @@ window.addEventListener('load', () => {
             category: e.target.elements.category.value,
             done: false,
             createdAt: new Date().getTime()
-            console.log(createdAt);
         }
 
         //add new todo to todos array
