@@ -1,11 +1,9 @@
-
 /*adding css root variables to use throughout*/
 :root {
     --primary: rgb(72, 71, 72);
     --business: rgb(57, 57, 190);
     --personal: rgba(250, 119, 208, 0.912);
-    --light:
-        --gray: #6c6c6c;
+    --gray: #6c6c6c;
     --dark: rgb(43, 43, 46);
     --danger: crimson;
 
